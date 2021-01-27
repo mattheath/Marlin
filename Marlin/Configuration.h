@@ -992,7 +992,7 @@
  *     O-- FRONT --+
  */
 // This is using the amauris | studio's Hero v2s bltouch mount: https://www.thingiverse.com/thing:3020267
-#define NOZZLE_TO_PROBE_OFFSET { 44, 4, -1 }
+#define NOZZLE_TO_PROBE_OFFSET { 44, 4, -1.3 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
