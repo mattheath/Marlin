@@ -1340,7 +1340,7 @@
  * Turn on with the command 'M111 S32'.
  * NOTE: Requires a lot of PROGMEM!
  */
-//#define DEBUG_LEVELING_FEATURE
+#define DEBUG_LEVELING_FEATURE
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_BILINEAR, AUTO_BED_LEVELING_UBL)
   // Gradually reduce leveling correction until a set height is reached,
@@ -1403,11 +1403,14 @@
 
   //===========================================================================
   //========================= Unified Bed Leveling ============================
-  //===========================================================================
+  //===========================================================================f
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
+  // Set Mesh bounds as an inset region of the bed
+  // Note that if this is smaller than the PROBING_MARGIN, UBL may not be able to probe these points
+  #define MESH_INSET 10
+
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
