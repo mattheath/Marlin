@@ -408,7 +408,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -991,8 +991,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-// This is using the amauris | studio's Hero v2s bltouch mount: https://www.thingiverse.com/thing:3020267
-#define NOZZLE_TO_PROBE_OFFSET { 44, 4, -1.3 }
+// This is using the Voron Afterburner, with a custom BLTouch mount
+#define NOZZLE_TO_PROBE_OFFSET { 42.5, -11.5, -1.500 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1163,7 +1163,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 225
-#define Y_BED_SIZE 225
+#define Y_BED_SIZE 210 // ~10mm lost in Y axis due to depth of Voron Afterburner
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1631,6 +1631,11 @@
 #define PREHEAT_2_TEMP_HOTEND 235
 #define PREHEAT_2_TEMP_BED    75
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
+
+#define PREHEAT_3_LABEL       "ABS"
+#define PREHEAT_3_TEMP_HOTEND 235
+#define PREHEAT_3_TEMP_BED    90
+#define PREHEAT_3_FAN_SPEED   0 // Value from 0 to 255
 
 /**
  * Nozzle Park
